@@ -1,9 +1,9 @@
 <!DOCTYPE html>
-<html lang="tr">
+<html lang="en">
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Betül Özaydın - Süper Animasyonlu CV</title>
+    <title>Betül Özaydın - Animated CV</title>
     <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;600;700;800&family=Roboto:wght@300;400;500&display=swap" rel="stylesheet">
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css">
     <style>
@@ -94,6 +94,8 @@
 
         :root {
             --accent-color-rgb: 255, 193, 7; /* Amber RGB */
+            --primary-color-rgb: 123, 31, 162; /* Primary RGB */
+            --secondary-color-rgb: 194, 24, 91; /* Secondary RGB */
         }
 
         @keyframes floatAndFade {
@@ -596,9 +598,9 @@
 
     <div class="container fade-in">
         <header class="fade-in">
-            <img src="CV/Ben.jpg" alt="Profil Resmi" class="profile-img scale-in">
+            <img src="CV/Ben.jpg" alt="Profile Picture" class="profile-img scale-in">
             <h1>Betül Özaydın</h1>
-            <p>Karabük Üniversitesi Bilgisayar Mühendisliği Öğrencisi</p>
+            <p>Computer Engineering Student at Karabuk University</p>
             <div class="contact-info">
                 <a href="mailto:betulozaydin13@gmail.com" class="slide-left"><i class="fas fa-envelope"></i> betulozaydin13@gmail.com</a>
                 <a href="tel:+905432862003" class="slide-left" style="animation-delay: 0.1s;"><i class="fas fa-phone"></i> +90 543 286 2003</a>
@@ -607,108 +609,91 @@
         </header>
 
         <section class="section fade-in">
-            <h2><i class="fas fa-user-circle"></i> Hakkımda</h2>
+            <h2><i class="fas fa-user-circle"></i> About Me</h2>
             <p>
-                Karabük Üniversitesi Bilgisayar Mühendisliği 3. sınıf öğrencisiyim. Yazılım geliştirme ve yeni teknolojileri öğrenme konusunda tutkuluyum. Özellikle web ve mobil uygulama geliştirme alanlarına ilgi duyuyor, kendimi bu yönlerde geliştirmeye çalışıyorum. Problem çözme becerilerimi geliştirmek ve yenilikçi projelerde yer almak en büyük hedeflerim arasında. Dinamik ve öğrenmeye açık bir ortamda hem bireysel hem de ekip çalışmasına yatkın bir şekilde katkı sağlamayı dört gözle bekliyorum.
+                I am a sophomore computer engineering student. I have improved myself in many areas and I am looking for a job environment that will challenge me and develop me even more.
             </p>
         </section>
 
         <section class="section fade-in">
-            <h2><i class="fas fa-graduation-cap"></i> Eğitim</h2>
+            <h2><i class="fas fa-graduation-cap"></i> Education</h2>
             <div class="item">
-                <h3>Karabük Üniversitesi</h3>
-                <p>Bilgisayar Mühendisliği (Lisans) | 2022 - Halen</p>
-                <p>Not Ortalaması: 3.50/4.00</p>
+                <h3>Karabuk University</h3>
+                <p>Computer Engineering (Bachelor's Degree) | 2022 - Present</p>
+                <p>GPA: 3.50/4.00</p>
             </div>
             <div class="item">
-                <h3>Zonguldak İMKB Anadolu Lisesi</h3>
-                <p>Anadolu Lisesi | 2018 - 2022</p>
-                <p>Fen Bilimleri Alanı</p>
+                <h3>Zonguldak IMKB Anatolian High School</h3>
+                <p>Anatolian High School | 2018 - 2022</p>
+                <p>Science Program</p>
             </div>
         </section>
 
         <section class="section fade-in">
-            <h2><i class="fas fa-code"></i> Beceriler</h2>
+            <h2><i class="fas fa-code"></i> Skills</h2>
             <div class="skills-grid">
                 <span class="skill-item">Java <i class="fab fa-java"></i></span>
                 <span class="skill-item">JavaScript <i class="fab fa-js"></i></span>
                 <span class="skill-item">HTML5 <i class="fab fa-html5"></i></span>
                 <span class="skill-item">CSS3 <i class="fab fa-css3-alt"></i></span>
                 <span class="skill-item">SQL <i class="fas fa-database"></i></span>
-                <span class="skill-item">Problem Çözme <i class="fas fa-lightbulb"></i></span>
-                <span class="skill-item">Ekip Çalışması <i class="fas fa-users"></i></span>
+                <span class="skill-item">Problem Solving <i class="fas fa-lightbulb"></i></span>
+                <span class="skill-item">Teamwork <i class="fas fa-users"></i></span>
             </div>
         </section>
 
         <section class="section fade-in">
-            <h2><i class="fas fa-project-diagram"></i> Projeler</h2>
+            <h2><i class="fas fa-project-diagram"></i> Projects</h2>
             <div class="item">
-                <h3>Kelime Öğrenme Uygulaması (JavaFX)</h3>
-                <p><strong>Açıklama:</strong> Kullanıcıların kelime öğrenmelerine ve pratik yapmalarına yardımcı olan bir masaüstü uygulaması. Kelimeleri ekleme, düzenleme, silme ve farklı modlarda (kartlar, testler) çalışma özelliklerine sahiptir.</p>
-                <ul>
-                    <li>JavaFX ile sezgisel bir kullanıcı arayüzü tasarlandı.</li>
-                    <li>Veritabanı olarak SQLite kullanılarak kelime verileri yönetildi.</li>
-                    <li>Farklı öğrenme algoritmaları ve test modülleri entegre edildi.</li>
-                </ul>
-                <a href="https://github.com/betulozaydin/Kelime-Ogrenme-Uygulamasi" target="_blank" class="project-link">Projeyi Görüntüle <i class="fas fa-external-link-alt"></i></a>
-            </div>
-            <div class="item">
-                <h3>E-ticaret Web Sitesi (MERN Stack)</h3>
-                <p><strong>Açıklama:</strong> Temel ürün listeleme, sepet, sipariş ve kullanıcı yönetimi özelliklerine sahip dinamik bir e-ticaret platformu.</p>
-                <ul>
-                    <li>Frontend için React.js ve Context API kullanıldı.</li>
-                    <li>Backend Node.js ve Express.js ile RESTful API'ler geliştirildi.</li>
-                    <li>Veritabanı olarak MongoDB tercih edildi.</li>
-                    <li>Kullanıcı kimlik doğrulama ve yetkilendirme (JWT) implemente edildi.</li>
-                </ul>
-                <a href="#" target="_blank" class="project-link">Projeyi Görüntüle <i class="fas fa-external-link-alt"></i></a>
+                <h3>Vocabulary Learning Application</h3>
+                <p><strong>Explanation:</strong> Learning Japanese Page</p>
             </div>
         </section>
 
         <section class="section fade-in">
-            <h2><i class="fas fa-briefcase"></i> Deneyimler (Staj / Gönüllü Çalışma)</h2>
+            <h2><i class="fas fa-briefcase"></i> Experience (Internship / Volunteer Work)</h2>
             <div class="item">
-                <h3>Yazılım Geliştirme Stajyeri - ABC Yazılım A.Ş.</h3>
-                <p>Haziran 2024 - Eylül 2024</p>
+                <h3>Software Development Intern - ABC Software Inc.</h3>
+                <p>June 2024 - September 2024</p>
                 <ul>
-                    <li>Java Spring Boot kullanarak şirket içi CRM uygulamasının backend geliştirme süreçlerinde aktif rol aldım.</li>
-                    <li>PostgreSQL veritabanı optimizasyonu ve yeni API uç noktalarının oluşturulmasında çalıştım.</li>
-                    <li>Ekip ile sürekli iletişim halinde olup, Agile (Scrum) metodolojileri ile çalıştım ve düzenli toplantılara katıldım.</li>
-                    <li>Unit testler yazarak kod kalitesinin artırılmasına katkıda bulundum.</li>
+                    <li>Actively participated in the backend development processes of an in-house CRM application using Java Spring Boot.</li>
+                    <li>Worked on PostgreSQL database optimization and the creation of new API endpoints.</li>
+                    <li>Maintained continuous communication with the team, worked with Agile (Scrum) methodologies, and attended regular meetings.</li>
+                    <li>Contributed to improving code quality by writing unit tests.</li>
                 </ul>
             </div>
             <div class="item">
-                <h3>Gönüllü Frontend Geliştirici - STEM Destek Derneği</h3>
-                <p>Ekim 2023 - Nisan 2024</p>
+                <h3>Volunteer Frontend Developer - STEM Support Association</h3>
+                <p>October 2023 - April 2024</p>
                 <ul>
-                    <li>Derneğin eğitim platformu için React.js tabanlı yeni kullanıcı arayüzleri geliştirdim.</li>
-                    <li>HTML5, CSS3 ve JavaScript kullanarak mevcut web sitesi sayfalarının responsive tasarımlarını iyileştirdim.</li>
-                    <li>Geliştirme sürecinde Figma prototiplerini canlıya dönüştürme konusunda deneyim kazandım.</li>
+                    <li>Developed new React.js-based user interfaces for the association's educational platform.</li>
+                    <li>Improved responsive designs of existing website pages using HTML5, CSS3, and JavaScript.</li>
+                    <li>Gained experience in transforming Figma prototypes into live implementations during the development process.</li>
                 </ul>
             </div>
         </section>
 
         <section class="section fade-in">
-            <h2><i class="fas fa-award"></i> Sertifikalar & Kurslar</h2>
+            <h2><i class="fas fa-award"></i> Certifications & Courses</h2>
             <div class="item">
-                <h3>Full Stack Web Developer Kursu - Udemy</h3>
-                <p>Eğitmen: Angela Yu | Ocak 2024</p>
+                <h3>Full Stack Web Developer Bootcamp - Udemy</h3>
+                <p>Instructor: Angela Yu | January 2024</p>
                 <ul>
-                    <li>HTML, CSS, JavaScript, Node.js, Express.js, MongoDB, React konularında kapsamlı eğitim.</li>
+                    <li>Comprehensive training in HTML, CSS, JavaScript, Node.js, Express.js, MongoDB, and React.</li>
                 </ul>
             </div>
             <div class="item">
-                <h3>AWS Cloud Practitioner Sertifikası</h3>
-                <p>Amazon | Mayıs 2023</p>
+                <h3>AWS Cloud Practitioner Certification</h3>
+                <p>Amazon | May 2023</p>
                 <ul>
-                    <li>Bulut bilişim temelleri, AWS hizmetleri ve temel güvenlik prensipleri üzerine sertifika.</li>
+                    <li>Certification on cloud computing fundamentals, AWS services, and basic security principles.</li>
                 </ul>
             </div>
             <div class="item">
                 <h3>Java Spring Boot & Microservices - Bilişim Eğitim Merkezi</h3>
-                <p>Bilişim Eğitim Merkezi | Nisan 2024</p>
+                <p>Bilişim Eğitim Merkezi | April 2024</p>
                 <ul>
-                    <li>Spring Boot ile RESTful API geliştirme ve mikroservis mimarileri konularında pratik eğitim.</li>
+                    <li>Practical training on developing RESTful APIs with Spring Boot and microservices architectures.</li>
                 </ul>
             </div>
         </section>
