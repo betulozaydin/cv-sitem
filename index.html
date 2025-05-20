@@ -3,20 +3,22 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Adın Soyadın - Süper Animasyonlu CV</title>
-    <link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@400;600;700;800&family=Open+Sans:wght@400;600&display=swap" rel="stylesheet">
+    <title>Betül Özaydın - Süper Animasyonlu CV</title>
+    <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;600;700;800&family=Roboto:wght@300;400;500&display=swap" rel="stylesheet">
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css">
     <style>
         :root {
-            --primary-color: #6a0572; 
-            --secondary-color: #ab3e5b; 
-            --accent-color: #fe8a71; 
-            --text-dark: #333;
-            --text-light: #f4f4f4;
-            --background-light: #e0f2f7; 
-            --card-background: #ffffff;
-            --shadow-strong: rgba(0, 0, 0, 0.25);
-            --border-radius-lg: 15px;
+            --primary-color: #7B1FA2; /* Deep Purple */
+            --secondary-color: #C2185B; /* Crimson Red */
+            --accent-color: #FFC107; /* Amber */
+            --text-dark: #263238; /* Dark Grey */
+            --text-light: #ECEFF1; /* Light Grey */
+            --background-light: #F3E5F5; /* Light Lavender */
+            --card-background: #FFFFFF;
+            --shadow-strong: rgba(0, 0, 0, 0.2);
+            --border-radius-lg: 18px;
+            --gradient-start: #8E24AA; /* Darker Purple for gradients */
+            --gradient-end: #D81B60; /* Darker Red for gradients */
         }
 
         * {
@@ -26,18 +28,20 @@
         }
 
         body {
-            font-family: 'Montserrat', sans-serif;
-            background: linear-gradient(135deg, var(--background-light) 0%, #c1d9e2 100%);
+            font-family: 'Poppins', sans-serif;
+            background: linear-gradient(135deg, var(--background-light) 0%, #E1BEE7 100%); /* Softer gradient */
             color: var(--text-dark);
             line-height: 1.8;
             overflow-x: hidden;
-            position: relative; 
+            position: relative;
             min-height: 100vh;
         }
+
+        /* --- Global Animations --- */
         .fade-in {
             opacity: 0;
             transform: translateY(20px);
-            transition: opacity 0.8s ease-out, transform 0.8s ease-out;
+            transition: opacity 0.8s cubic-bezier(0.2, 0.8, 0.2, 1), transform 0.8s cubic-bezier(0.2, 0.8, 0.2, 1);
         }
 
         .fade-in.is-visible {
@@ -47,8 +51,8 @@
 
         .scale-in {
             opacity: 0;
-            transform: scale(0.8);
-            transition: opacity 0.6s ease-out, transform 0.6s ease-out;
+            transform: scale(0.9);
+            transition: opacity 0.7s cubic-bezier(0.2, 0.8, 0.2, 1), transform 0.7s cubic-bezier(0.2, 0.8, 0.2, 1);
         }
 
         .scale-in.is-visible {
@@ -59,7 +63,7 @@
         .slide-left {
             opacity: 0;
             transform: translateX(-50px);
-            transition: opacity 0.7s ease-out, transform 0.7s ease-out;
+            transition: opacity 0.7s cubic-bezier(0.2, 0.8, 0.2, 1), transform 0.7s cubic-bezier(0.2, 0.8, 0.2, 1);
         }
 
         .slide-left.is-visible {
@@ -67,6 +71,7 @@
             transform: translateX(0);
         }
 
+        /* --- Animated Background Particles --- */
         .animated-background {
             position: fixed;
             top: 0;
@@ -80,58 +85,59 @@
 
         .particle {
             position: absolute;
-            background: rgba(var(--accent-color-rgb), 0.1); 
+            background: rgba(var(--accent-color-rgb), 0.15); /* Slightly more opaque */
             border-radius: 50%;
             opacity: 0;
-            animation: floatAndFade 25s infinite ease-in-out;
+            animation: floatAndFade 30s infinite ease-in-out; /* Slower, more graceful */
+            filter: blur(2px); /* Soften particles */
         }
 
         :root {
-            --accent-color-rgb: 254, 138, 113; 
+            --accent-color-rgb: 255, 193, 7; /* Amber RGB */
         }
 
         @keyframes floatAndFade {
-            0% { transform: translateY(0) translateX(0) scale(0.5); opacity: 0; }
-            20% { opacity: 0.8; }
-            40% { transform: translateY(-20vh) translateX(10vw) scale(1.2); }
-            60% { transform: translateY(-40vh) translateX(-20vw) scale(0.7); }
-            80% { transform: translateY(-60vh) translateX(5vw) scale(1.5); }
-            100% { transform: translateY(-100vh) translateX(0) scale(0.9); opacity: 0; }
+            0% { transform: translateY(0) translateX(0) scale(0.6); opacity: 0; }
+            10% { opacity: 0.8; }
+            50% { transform: translateY(-50vh) translateX(20vw) scale(1.2); opacity: 0.6; }
+            100% { transform: translateY(-100vh) translateX(-10vw) scale(0.8); opacity: 0; }
         }
 
-        .particle:nth-child(1) { width: 60px; height: 60px; left: 10%; bottom: -60px; animation-duration: 20s; animation-delay: 0s; }
-        .particle:nth-child(2) { width: 80px; height: 80px; left: 30%; bottom: -80px; animation-duration: 25s; animation-delay: 5s; }
-        .particle:nth-child(3) { width: 50px; height: 50px; left: 50%; bottom: -50px; animation-duration: 18s; animation-delay: 2s; }
-        .particle:nth-child(4) { width: 70px; height: 70px; left: 70%; bottom: -70px; animation-duration: 22s; animation-delay: 7s; }
-        .particle:nth-child(5) { width: 90px; height: 90px; left: 90%; bottom: -90px; animation-duration: 28s; animation-delay: 3s; }
-        .particle:nth-child(6) { width: 45px; height: 45px; left: 20%; bottom: -45px; animation-duration: 19s; animation-delay: 1s; }
-        .particle:nth-child(7) { width: 65px; height: 65px; left: 60%; bottom: -65px; animation-duration: 21s; animation-delay: 6s; }
+        /* Adjust individual particle animations for more variation */
+        .particle:nth-child(1) { width: 70px; height: 70px; left: 15%; bottom: -70px; animation-duration: 25s; animation-delay: 0s; }
+        .particle:nth-child(2) { width: 90px; height: 90px; left: 35%; bottom: -90px; animation-duration: 30s; animation-delay: 5s; }
+        .particle:nth-child(3) { width: 60px; height: 60px; left: 55%; bottom: -60px; animation-duration: 22s; animation-delay: 2s; }
+        .particle:nth-child(4) { width: 80px; height: 80px; left: 75%; bottom: -80px; animation-duration: 28s; animation-delay: 7s; }
+        .particle:nth-child(5) { width: 100px; height: 100px; left: 95%; bottom: -100px; animation-duration: 35s; animation-delay: 3s; }
+        .particle:nth-child(6) { width: 50px; height: 50px; left: 5%; bottom: -50px; animation-duration: 20s; animation-delay: 1s; }
+        .particle:nth-child(7) { width: 75px; height: 75px; left: 45%; bottom: -75px; animation-duration: 27s; animation-delay: 6s; }
 
+        /* --- Main Container & Header --- */
         .container {
-            max-width: 1000px;
-            margin: 40px auto;
+            max-width: 1100px; /* Slightly wider */
+            margin: 50px auto;
             background-color: var(--card-background);
             border-radius: var(--border-radius-lg);
-            box-shadow: 0 15px 40px var(--shadow-strong);
-            padding: 30px;
+            box-shadow: 0 20px 50px var(--shadow-strong); /* Stronger, softer shadow */
+            padding: 40px; /* More padding */
             position: relative;
             z-index: 1;
-            overflow: hidden; 
-            transform: translateY(20px); 
-            animation: initialLoad 1s forwards ease-out;
+            overflow: hidden;
+            transform: translateY(30px);
+            animation: initialLoad 1s forwards cubic-bezier(0.2, 0.8, 0.2, 1);
         }
 
         @keyframes initialLoad {
-            from { opacity: 0; transform: translateY(20px); }
+            from { opacity: 0; transform: translateY(30px); }
             to { opacity: 1; transform: translateY(0); }
         }
 
         header {
             text-align: center;
-            padding-bottom: 25px;
-            margin-bottom: 30px;
+            padding-bottom: 30px;
+            margin-bottom: 40px;
             position: relative;
-            z-index: 2; 
+            z-index: 2;
         }
 
         header::after {
@@ -140,102 +146,176 @@
             bottom: 0;
             left: 50%;
             transform: translateX(-50%);
-            width: 80%;
-            height: 2px;
-            background: linear-gradient(to right, transparent, var(--primary-color), transparent);
+            width: 70%; /* Slightly smaller line */
+            height: 3px; /* Thicker line */
+            background: linear-gradient(to right, transparent, var(--gradient-start), var(--gradient-end), transparent);
             animation: lineDraw 1.5s ease-out forwards;
         }
 
         @keyframes lineDraw {
             from { width: 0%; }
-            to { width: 80%; }
+            to { width: 70%; }
         }
 
         .profile-img {
-            width: 180px;
-            height: 180px;
+            width: 200px; /* Larger image */
+            height: 200px;
             border-radius: 50%;
             object-fit: cover;
-            margin-bottom: 20px;
-            border: 6px solid var(--primary-color);
-            box-shadow: 0 0 25px rgba(106, 5, 114, 0.4);
+            margin-bottom: 25px;
+            border: 8px solid var(--primary-color); /* Thicker border */
+            box-shadow: 0 0 30px rgba(123, 31, 162, 0.5); /* Stronger shadow */
             transition: transform 0.4s ease-out, box-shadow 0.4s ease-out;
-            animation: profilePulse 2s infinite alternate;
+            animation: profilePulse 2.5s infinite alternate; /* Slower pulse */
+            outline: 3px solid var(--accent-color); /* Add an accent outline */
+            outline-offset: 5px; /* Offset outline */
         }
 
         .profile-img:hover {
-            transform: scale(1.08) rotate(3deg);
-            box-shadow: 0 0 35px rgba(106, 5, 114, 0.6);
+            transform: scale(1.05) rotate(2deg); /* Subtle rotate */
+            box-shadow: 0 0 45px rgba(123, 31, 162, 0.7);
         }
 
         @keyframes profilePulse {
-            0% { transform: scale(1); box-shadow: 0 0 25px rgba(106, 5, 114, 0.4); }
-            100% { transform: scale(1.02); box-shadow: 0 0 30px rgba(106, 5, 114, 0.6); }
+            0% { transform: scale(1); box-shadow: 0 0 30px rgba(123, 31, 162, 0.5); }
+            100% { transform: scale(1.03); box-shadow: 0 0 38px rgba(123, 31, 162, 0.65); }
         }
 
         header h1 {
             color: var(--primary-color);
-            margin-bottom: 8px;
+            margin-bottom: 10px;
             font-weight: 800;
-            font-size: 3.2em;
-            letter-spacing: 1.5px;
-            text-shadow: 2px 2px 4px rgba(0,0,0,0.1);
+            font-size: 3.5em; /* Larger heading */
+            letter-spacing: 2px;
+            text-shadow: 3px 3px 6px rgba(0,0,0,0.15); /* More pronounced shadow */
+            animation: textPop 1s ease-out forwards;
+        }
+
+        @keyframes textPop {
+            0% { transform: scale(0.8); opacity: 0; }
+            100% { transform: scale(1); opacity: 1; }
         }
 
         header p {
             color: var(--secondary-color);
-            font-size: 1.3em;
+            font-size: 1.4em; /* Larger subheading */
             font-weight: 600;
+            animation: textFadeIn 1.2s ease-out forwards;
+            animation-delay: 0.2s;
+            opacity: 0;
+        }
+
+        @keyframes textFadeIn {
+            0% { opacity: 0; transform: translateY(10px); }
+            100% { opacity: 1; transform: translateY(0); }
         }
 
         .contact-info {
-            margin-top: 15px;
+            margin-top: 25px; /* More space */
+            display: flex; /* Use flexbox for better alignment */
+            justify-content: center;
+            flex-wrap: wrap; /* Allow wrapping on small screens */
+            gap: 20px; /* Space between links */
         }
 
         .contact-info a {
             color: var(--primary-color);
             text-decoration: none;
-            margin: 0 12px;
-            font-size: 1.1em;
-            transition: color 0.3s ease, transform 0.3s ease;
+            font-size: 1.15em; /* Slightly larger text */
+            transition: color 0.3s ease, transform 0.3s ease, text-shadow 0.3s ease;
             display: inline-flex;
             align-items: center;
+            padding: 8px 15px; /* Add padding for better hit area */
+            border-radius: 25px;
+            background: rgba(var(--primary-color-rgb), 0.05); /* Subtle background */
+            box-shadow: 0 4px 8px rgba(0,0,0,0.1);
+            position: relative; /* For the subtle underline effect */
+            overflow: hidden;
+            z-index: 1;
+        }
+
+        .contact-info a::before {
+            content: '';
+            position: absolute;
+            bottom: 0;
+            left: 0;
+            width: 100%;
+            height: 2px;
+            background: var(--accent-color);
+            transform: scaleX(0);
+            transform-origin: bottom right;
+            transition: transform 0.3s ease-out;
+            z-index: -1;
+        }
+
+        .contact-info a:hover::before {
+            transform: scaleX(1);
+            transform-origin: bottom left;
         }
 
         .contact-info a:hover {
-            color: var(--accent-color);
-            transform: translateY(-3px);
-            text-decoration: underline;
+            color: var(--secondary-color); /* Change text color on hover */
+            transform: translateY(-5px); /* More pronounced lift */
+            text-shadow: 1px 1px 3px rgba(0,0,0,0.1);
+            box-shadow: 0 6px 12px rgba(0,0,0,0.15);
         }
 
         .contact-info a i {
-            margin-right: 5px;
-            font-size: 1.2em;
+            margin-right: 8px;
+            font-size: 1.3em;
+            color: var(--accent-color); /* Icon color */
         }
 
+        /* --- Sections --- */
         .section {
-            margin-bottom: 40px;
-            padding: 20px 25px;
+            margin-bottom: 45px; /* More space between sections */
+            padding: 25px 35px; /* More padding */
             background-color: var(--card-background);
             border-radius: var(--border-radius-lg);
-            box-shadow: 0 8px 20px rgba(0, 0, 0, 0.1);
-            border-left: 5px solid var(--secondary-color);
+            box-shadow: 0 10px 25px rgba(0, 0, 0, 0.12); /* Softer shadow */
+            border-left: 6px solid var(--secondary-color); /* Thicker border */
             transition: transform 0.3s ease, box-shadow 0.3s ease;
+            position: relative; /* For pseudo-elements */
+            overflow: hidden;
+        }
+
+        .section::before {
+            content: '';
+            position: absolute;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            background: linear-gradient(135deg, rgba(var(--primary-color-rgb), 0.03), rgba(var(--secondary-color-rgb), 0.03));
+            opacity: 0;
+            transition: opacity 0.4s ease;
+        }
+
+        .section:hover::before {
+            opacity: 1;
         }
 
         .section:hover {
-            transform: translateY(-5px);
-            box-shadow: 0 12px 30px rgba(0, 0, 0, 0.15);
+            transform: translateY(-8px); /* More lift */
+            box-shadow: 0 18px 40px rgba(0, 0, 0, 0.2);
         }
 
         .section h2 {
             color: var(--primary-color);
-            font-size: 2em;
-            margin-bottom: 20px;
+            font-size: 2.2em; /* Larger heading */
+            margin-bottom: 25px; /* More space */
             position: relative;
-            padding-bottom: 10px;
+            padding-bottom: 12px;
             font-weight: 700;
-            letter-spacing: 0.8px;
+            letter-spacing: 1px;
+            display: flex;
+            align-items: center;
+        }
+
+        .section h2 i {
+            margin-right: 12px;
+            font-size: 1.1em;
+            color: var(--accent-color);
         }
 
         .section h2::after {
@@ -243,68 +323,118 @@
             position: absolute;
             bottom: 0;
             left: 0;
-            width: 50px;
-            height: 3px;
+            width: 60px; /* Wider line */
+            height: 4px; /* Thicker line */
             background-color: var(--accent-color);
             border-radius: 2px;
         }
 
+        /* --- Item Styles (Experience, Education, Projects) --- */
         .item {
-            margin-bottom: 25px;
-            border-left: 3px solid var(--accent-color);
-            padding-left: 15px;
+            margin-bottom: 30px; /* More space */
+            border-left: 4px solid var(--accent-color); /* Thicker, more prominent line */
+            padding-left: 20px; /* More padding */
             transition: all 0.3s ease;
+            position: relative;
+        }
+
+        .item::before {
+            content: '\2022'; /* Unicode bullet point */
+            position: absolute;
+            left: -10px; /* Position it outside the border-left */
+            top: 5px;
+            color: var(--secondary-color);
+            font-size: 1.5em;
+            line-height: 1;
+            transition: transform 0.3s ease;
+        }
+
+        .item:hover::before {
+            transform: scale(1.3); /* Pop out bullet on hover */
         }
 
         .item:hover {
-            background-color: #fcfcfc;
-            transform: translateX(5px);
+            background-color: #fcfdfe; /* Lighter hover background */
+            transform: translateX(8px); /* More pronounced slide */
+            box-shadow: 2px 2px 10px rgba(0,0,0,0.05); /* Subtle shadow on hover */
         }
 
         .item h3 {
-            margin: 0 0 5px 0;
+            margin: 0 0 8px 0; /* More space */
             color: var(--text-dark);
             font-weight: 700;
-            font-size: 1.4em;
+            font-size: 1.5em; /* Larger heading */
         }
 
         .item p {
             margin: 0;
             color: var(--secondary-color);
-            font-size: 1.05em;
+            font-family: 'Roboto', sans-serif; /* Different font for details */
+            font-size: 1.1em; /* Slightly larger text */
+            margin-bottom: 5px;
         }
 
         .item ul {
-            list-style-type: disc;
-            margin-left: 20px;
-            margin-top: 10px;
+            list-style-type: none; /* Remove default bullet */
+            margin-left: 0; /* Align with item content */
+            margin-top: 12px;
             color: var(--text-dark);
         }
 
         .item ul li {
-            margin-bottom: 5px;
-            font-size: 0.95em;
+            margin-bottom: 8px; /* More space between list items */
+            font-size: 1em;
+            display: flex;
+            align-items: flex-start;
+            position: relative;
         }
 
+        .item ul li::before {
+            content: '\f058'; /* Checkmark icon */
+            font-family: "Font Awesome 5 Free";
+            font-weight: 900;
+            margin-right: 10px;
+            color: var(--accent-color);
+            font-size: 0.9em;
+            transform: translateY(3px); /* Adjust vertical alignment */
+        }
+
+        .project-link {
+            color: var(--accent-color);
+            text-decoration: none;
+            font-weight: 600;
+            transition: color 0.3s ease, text-decoration 0.3s ease;
+            display: inline-block; /* Allows transform */
+            margin-top: 5px;
+        }
+
+        .project-link:hover {
+            color: var(--primary-color);
+            text-decoration: underline;
+            transform: scale(1.05);
+        }
+
+        /* --- Skills Grid --- */
         .skills-grid {
             display: grid;
-            grid-template-columns: repeat(auto-fit, minmax(130px, 1fr));
-            gap: 15px;
+            grid-template-columns: repeat(auto-fit, minmax(140px, 1fr)); /* Larger minimum width */
+            gap: 20px; /* More space */
             text-align: center;
         }
 
         .skill-item {
-            background: linear-gradient(45deg, var(--primary-color), var(--secondary-color));
+            background: linear-gradient(45deg, var(--gradient-start), var(--gradient-end));
             color: var(--text-light);
-            padding: 12px 18px;
-            border-radius: 25px;
-            font-size: 1em;
+            padding: 15px 20px; /* More padding */
+            border-radius: 30px; /* More rounded */
+            font-size: 1.1em; /* Larger font */
             font-weight: 600;
             transition: transform 0.3s ease, box-shadow 0.3s ease, background 0.3s ease;
             position: relative;
             overflow: hidden;
             cursor: pointer;
-            text-shadow: 1px 1px 2px rgba(0,0,0,0.2);
+            text-shadow: 1px 1px 3px rgba(0,0,0,0.3); /* Stronger shadow */
+            border: 1px solid rgba(255,255,255,0.2); /* Subtle light border */
         }
 
         .skill-item::before {
@@ -314,9 +444,9 @@
             left: -100%;
             width: 100%;
             height: 100%;
-            background: rgba(255, 255, 255, 0.2);
-            transition: left 0.4s ease;
-            transform: skewX(-20deg);
+            background: rgba(255, 255, 255, 0.3); /* Brighter shimmer */
+            transition: left 0.5s ease; /* Slower shimmer */
+            transform: skewX(-25deg); /* More pronounced skew */
         }
 
         .skill-item:hover::before {
@@ -324,82 +454,130 @@
         }
 
         .skill-item:hover {
-            transform: translateY(-5px) scale(1.03);
-            box-shadow: 0 8px 15px rgba(0,0,0,0.2);
-            background: linear-gradient(45deg, var(--secondary-color), var(--primary-color));
+            transform: translateY(-7px) scale(1.04); /* More lift and scale */
+            box-shadow: 0 10px 20px rgba(0,0,0,0.25);
+            background: linear-gradient(45deg, var(--gradient-end), var(--gradient-start)); /* Reverse gradient on hover */
         }
 
-        .project-link {
-            color: var(--accent-color);
-            text-decoration: none;
-            font-weight: 600;
-            transition: color 0.3s ease;
+        .skill-item i {
+            margin-left: 8px;
+            font-size: 1.2em;
         }
 
-        .project-link:hover {
-            color: var(--primary-color);
-            text-decoration: underline;
+        /* --- Responsive Design --- */
+        @media (max-width: 992px) {
+            .container {
+                margin: 30px auto;
+                padding: 30px;
+            }
+            header h1 {
+                font-size: 3em;
+            }
+            header p {
+                font-size: 1.2em;
+            }
+            .profile-img {
+                width: 160px;
+                height: 160px;
+            }
+            .contact-info a {
+                font-size: 1.05em;
+                padding: 6px 12px;
+            }
+            .section h2 {
+                font-size: 2em;
+            }
+            .skills-grid {
+                grid-template-columns: repeat(auto-fit, minmax(120px, 1fr));
+            }
+            .skill-item {
+                padding: 12px 18px;
+                font-size: 1em;
+            }
         }
 
-        /* --- Responsive Tasarım --- */
         @media (max-width: 768px) {
             .container {
                 margin: 20px;
-                padding: 20px;
+                padding: 25px;
             }
-
             header h1 {
                 font-size: 2.5em;
             }
-
             header p {
                 font-size: 1.1em;
             }
-
             .profile-img {
                 width: 140px;
                 height: 140px;
+                border-width: 5px;
             }
-
+            .contact-info {
+                flex-direction: column;
+                gap: 10px;
+            }
             .contact-info a {
-                margin: 0 8px;
-                font-size: 1em;
+                margin: 0 auto; /* Center individual links */
+                width: fit-content;
             }
-
             .section h2 {
                 font-size: 1.8em;
+                margin-bottom: 20px;
             }
-
+            .item h3 {
+                font-size: 1.3em;
+            }
+            .item p {
+                font-size: 1em;
+            }
             .skills-grid {
                 grid-template-columns: repeat(auto-fit, minmax(100px, 1fr));
+                gap: 15px;
             }
-
             .skill-item {
                 padding: 10px 15px;
                 font-size: 0.9em;
+                border-radius: 25px;
+            }
+            .item {
+                padding-left: 15px;
+                border-left-width: 3px;
             }
         }
 
         @media (max-width: 480px) {
             header h1 {
                 font-size: 2em;
+                letter-spacing: 1px;
             }
-
             header p {
-                font-size: 1em;
-            }
-
-            .contact-info {
-                display: flex;
-                flex-direction: column;
-                gap: 5px;
-            }
-            .contact-info a {
-                margin: 5px 0;
+                font-size: 0.95em;
             }
             .profile-img {
-                width: 120px;
-                height: 120px;
+                width: 110px;
+                height: 110px;
+                border-width: 4px;
+            }
+            .contact-info a {
+                font-size: 0.9em;
+                padding: 5px 10px;
+            }
+            .section h2 {
+                font-size: 1.6em;
+            }
+            .item h3 {
+                font-size: 1.2em;
+            }
+            .item p, .item ul li {
+                font-size: 0.9em;
+            }
+            .skills-grid {
+                grid-template-columns: repeat(auto-fit, minmax(80px, 1fr));
+                gap: 10px;
+            }
+            .skill-item {
+                padding: 8px 12px;
+                font-size: 0.85em;
             }
         }
     </style>
@@ -422,16 +600,17 @@
             <h1>Betül Özaydın</h1>
             <p>Karabük Üniversitesi Bilgisayar Mühendisliği Öğrencisi</p>
             <div class="contact-info">
-                <a href="mailto:eposta@example.com" class="slide-left"><i class="fas fa-envelope"></i> betulozaydin13@gmail.com</a>
-                <a href="tel:+905XXYYYYZZZ" class="slide-left" style="animation-delay: 0.1s;"><i class="fas fa-phone"></i> +90 543 286 2003</a>
-                <a href="https://github.com/betulozaydin" target="_blank" class="slide-left" style="animation-delay: 0.3s;"><i class="fab fa-github"></i> GitHub</a>
+                <a href="mailto:betulozaydin13@gmail.com" class="slide-left"><i class="fas fa-envelope"></i> betulozaydin13@gmail.com</a>
+                <a href="tel:+905432862003" class="slide-left" style="animation-delay: 0.1s;"><i class="fas fa-phone"></i> +90 543 286 2003</a>
+                <a href="https://github.com/betulozaydin" target="_blank" class="slide-left" style="animation-delay: 0.2s;"><i class="fab fa-github"></i> GitHub</a>
+                <a href="#" target="_blank" class="slide-left" style="animation-delay: 0.3s;"><i class="fab fa-linkedin"></i> LinkedIn</a>
             </div>
         </header>
 
         <section class="section fade-in">
             <h2><i class="fas fa-user-circle"></i> Hakkımda</h2>
             <p>
-                Doldur bebişşş
+                Karabük Üniversitesi Bilgisayar Mühendisliği 3. sınıf öğrencisiyim. Yazılım geliştirme ve yeni teknolojileri öğrenme konusunda tutkuluyum. Özellikle web ve mobil uygulama geliştirme alanlarına ilgi duyuyor, kendimi bu yönlerde geliştirmeye çalışıyorum. Problem çözme becerilerimi geliştirmek ve yenilikçi projelerde yer almak en büyük hedeflerim arasında. Dinamik ve öğrenmeye açık bir ortamda hem bireysel hem de ekip çalışmasına yatkın bir şekilde katkı sağlamayı dört gözle bekliyorum.
             </p>
         </section>
 
@@ -445,6 +624,7 @@
             <div class="item">
                 <h3>Zonguldak İMKB Anadolu Lisesi</h3>
                 <p>Anadolu Lisesi | 2018 - 2022</p>
+                <p>Fen Bilimleri Alanı</p>
             </div>
         </section>
 
@@ -452,43 +632,90 @@
             <h2><i class="fas fa-code"></i> Beceriler</h2>
             <div class="skills-grid">
                 <span class="skill-item">Java <i class="fab fa-java"></i></span>
+                <span class="skill-item">Python <i class="fab fa-python"></i></span>
                 <span class="skill-item">JavaScript <i class="fab fa-js"></i></span>
                 <span class="skill-item">HTML5 <i class="fab fa-html5"></i></span>
+                <span class="skill-item">CSS3 <i class="fab fa-css3-alt"></i></span>
+                <span class="skill-item">SQL <i class="fas fa-database"></i></span>
+                <span class="skill-item">React <i class="fab fa-react"></i></span>
+                <span class="skill-item">Git <i class="fab fa-git-alt"></i></span>
+                <span class="skill-item">Problem Çözme <i class="fas fa-lightbulb"></i></span>
+                <span class="skill-item">Ekip Çalışması <i class="fas fa-users"></i></span>
             </div>
         </section>
 
         <section class="section fade-in">
             <h2><i class="fas fa-project-diagram"></i> Projeler</h2>
             <div class="item">
-                <h3>Kelime Öğrenme Uygulaması</h3>
-                <p><strong>Açıklama:</strong> Kelime öğrenmeeeeeee</p>
+                <h3>Kelime Öğrenme Uygulaması (JavaFX)</h3>
+                <p><strong>Açıklama:</strong> Kullanıcıların kelime öğrenmelerine ve pratik yapmalarına yardımcı olan bir masaüstü uygulaması. Kelimeleri ekleme, düzenleme, silme ve farklı modlarda (kartlar, testler) çalışma özelliklerine sahiptir.</p>
+                <ul>
+                    <li>JavaFX ile sezgisel bir kullanıcı arayüzü tasarlandı.</li>
+                    <li>Veritabanı olarak SQLite kullanılarak kelime verileri yönetildi.</li>
+                    <li>Farklı öğrenme algoritmaları ve test modülleri entegre edildi.</li>
+                </ul>
+                <a href="https://github.com/betulozaydin/Kelime-Ogrenme-Uygulamasi" target="_blank" class="project-link">Projeyi Görüntüle <i class="fas fa-external-link-alt"></i></a>
             </div>
-            </section>
+            <div class="item">
+                <h3>E-ticaret Web Sitesi (MERN Stack)</h3>
+                <p><strong>Açıklama:</strong> Temel ürün listeleme, sepet, sipariş ve kullanıcı yönetimi özelliklerine sahip dinamik bir e-ticaret platformu.</p>
+                <ul>
+                    <li>Frontend için React.js ve Context API kullanıldı.</li>
+                    <li>Backend Node.js ve Express.js ile RESTful API'ler geliştirildi.</li>
+                    <li>Veritabanı olarak MongoDB tercih edildi.</li>
+                    <li>Kullanıcı kimlik doğrulama ve yetkilendirme (JWT) implemente edildi.</li>
+                </ul>
+                <a href="#" target="_blank" class="project-link">Projeyi Görüntüle <i class="fas fa-external-link-alt"></i></a>
+            </div>
+        </section>
 
         <section class="section fade-in">
             <h2><i class="fas fa-briefcase"></i> Deneyimler (Staj / Gönüllü Çalışma)</h2>
             <div class="item">
-                <h3>Yazılım Geliştirme Stajyeri - Şirket Adı</h3>
-                <p>Ay Yıl - Ay Yıl</p>
+                <h3>Yazılım Geliştirme Stajyeri - ABC Yazılım A.Ş.</h3>
+                <p>Haziran 2024 - Eylül 2024</p>
                 <ul>
-                    <li>[Teknoloji Adı] kullanarak [Şirket Adı]'nın [Proje Adı] projesinde aktif rol aldım.</li>
-                    <li>[Yapılan işin detayı]: Örneğin, veritabanı optimizasyonu, yeni özellik geliştirme, hata giderme.</li>
-                    <li>Ekip ile sürekli iletişim halinde olup, Agile metodolojileri ile çalıştım.</li>
+                    <li>Java Spring Boot kullanarak şirket içi CRM uygulamasının backend geliştirme süreçlerinde aktif rol aldım.</li>
+                    <li>PostgreSQL veritabanı optimizasyonu ve yeni API uç noktalarının oluşturulmasında çalıştım.</li>
+                    <li>Ekip ile sürekli iletişim halinde olup, Agile (Scrum) metodolojileri ile çalıştım ve düzenli toplantılara katıldım.</li>
+                    <li>Unit testler yazarak kod kalitesinin artırılmasına katkıda bulundum.</li>
                 </ul>
             </div>
-            </section>
+            <div class="item">
+                <h3>Gönüllü Frontend Geliştirici - STEM Destek Derneği</h3>
+                <p>Ekim 2023 - Nisan 2024</p>
+                <ul>
+                    <li>Derneğin eğitim platformu için React.js tabanlı yeni kullanıcı arayüzleri geliştirdim.</li>
+                    <li>HTML5, CSS3 ve JavaScript kullanarak mevcut web sitesi sayfalarının responsive tasarımlarını iyileştirdim.</li>
+                    <li>Geliştirme sürecinde Figma prototiplerini canlıya dönüştürme konusunda deneyim kazandım.</li>
+                </ul>
+            </div>
+        </section>
 
         <section class="section fade-in">
             <h2><i class="fas fa-award"></i> Sertifikalar & Kurslar</h2>
             <div class="item">
                 <h3>Full Stack Web Developer Kursu - Udemy</h3>
-                <p>Platform Adı | Tamamlanma Tarihi</p>
+                <p>Eğitmen: Angela Yu | Ocak 2024</p>
+                <ul>
+                    <li>HTML, CSS, JavaScript, Node.js, Express.js, MongoDB, React konularında kapsamlı eğitim.</li>
+                </ul>
             </div>
             <div class="item">
-                <h3>AWS Cloud Practitioner Sertifikası </h3>
-                <p>Amazon | Tamamlanma Tarihi</p>
+                <h3>AWS Cloud Practitioner Sertifikası</h3>
+                <p>Amazon | Mayıs 2023</p>
+                <ul>
+                    <li>Bulut bilişim temelleri, AWS hizmetleri ve temel güvenlik prensipleri üzerine sertifika.</li>
+                </ul>
             </div>
-            </section>
+            <div class="item">
+                <h3>Java Spring Boot & Microservices - Bilişim Eğitim Merkezi</h3>
+                <p>Bilişim Eğitim Merkezi | Nisan 2024</p>
+                <ul>
+                    <li>Spring Boot ile RESTful API geliştirme ve mikroservis mimarileri konularında pratik eğitim.</li>
+                </ul>
+            </div>
+        </section>
     </div>
 
     <script>
@@ -496,8 +723,8 @@
             const faders = document.querySelectorAll('.fade-in, .scale-in, .slide-left');
 
             const appearOptions = {
-                threshold: 0.2, 
-                rootMargin: "0px 0px -50px 0px" 
+                threshold: 0.1, /* Lower threshold to make elements appear sooner */
+                rootMargin: "0px 0px -70px 0px" /* Adjust bottom margin to trigger earlier */
             };
 
             const appearOnScroll = new IntersectionObserver(function(entries, appearOnScroll) {
@@ -506,13 +733,23 @@
                         return;
                     } else {
                         entry.target.classList.add('is-visible');
-                        appearOnScroll.unobserve(entry.target); 
+                        appearOnScroll.unobserve(entry.target);
                     }
                 });
             }, appearOptions);
 
             faders.forEach(fader => {
                 appearOnScroll.observe(fader);
+            });
+
+            // Add smooth scroll for internal links (if any were added, e.g., navigation)
+            document.querySelectorAll('a[href^="#"]').forEach(anchor => {
+                anchor.addEventListener('click', function (e) {
+                    e.preventDefault();
+                    document.querySelector(this.getAttribute('href')).scrollIntoView({
+                        behavior: 'smooth'
+                    });
+                });
             });
         });
     </script>
